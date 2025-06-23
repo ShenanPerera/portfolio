@@ -6,9 +6,11 @@ import GitHubIcon from '../src/assets/github.svg';
 import EmailIcon from '../src/assets/email.svg';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('software');
+  type TabKey = 'software' | 'ai' | 'uiux';
 
-  const tabContent = {
+  const [activeTab, setActiveTab] = useState<TabKey>('software');
+
+  const tabContent:  Record<TabKey, string> = {
     software:
       'I bring a practical and adaptable approach to software development, with a strong foundation in programming principles and system architecture. My academic journey and internship experience have equipped me with the tools to build scalable, maintainable solutions using modern stacks like .NET, Java, and JavaScript frameworks. I value clean code, performance, and team collaboration, and I’m comfortable working with REST APIs, relational databases, version control, and testing practices.',
     ai:
